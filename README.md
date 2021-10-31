@@ -8,9 +8,7 @@ Exemplo 04: Display e IOs <br>
 Exemplo 05: Máquina de estados <br>
  <br>
 Os arquivos de código devem ser usados em um novo projeto no MPLab. Para prepara seu ambiente de programação, siga as orientações do vídeo abaixo: <br>
-<br>
 https://youtu.be/KmbrC2crMCQ
-<br>
-Para criar um novo projeto e usar os códigos de exemplo, siga as orientações do vídeo abaixo:
-<br>
+<br><br>
+Para criar um novo projeto e usar os códigos de exemplo, siga as orientações do vídeo abaixo:<br>
 https://youtu.be/g0kYKjXIjD0
