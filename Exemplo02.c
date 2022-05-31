@@ -1,8 +1,8 @@
 /* ============================================================
- * CT Eletroeletrônica EaD
+ * CT EletroeletrÃ´nica EaD
  * -----------------------
- * NOME:        02 - Entradas e saídas
- * DESCRIÇÃO:   Testes de entradas e saídas
+ * NOME:        02 - Entradas e saÃ­das
+ * DESCRIÃ‡ÃƒO:   Testes de entradas e saÃ­das
  * DATA:        28/11/2019
  * ========================================================== */
 
@@ -15,7 +15,7 @@
 
 
 // ==========================================================
-// CONFIGURAÇÕES DO MICROCONTROLADOR
+// CONFIGURAÃ‡Ã•ES DO MICROCONTROLADOR
 // ==========================================================
 #pragma config  FOSC    = HS
 #pragma config  PLLDIV  = 1
@@ -37,9 +37,9 @@
 // ==========================================================
 void main(void) {
     // ------------------------------------------------------
-    // CONFIGURAÇÕES INICIAIS
+    // CONFIGURAÃ‡Ã•ES INICIAIS
     // ------------------------------------------------------
-    TRISDbits.RD0 = 0;  // Configura pino RD0 como saída
+    TRISDbits.RD0 = 0;  // Configura pino RD0 como saÃ­da
     TRISBbits.RB1 = 1;  // Configura pino RB1 como entrada
     // ------------------------------------------------------
     
