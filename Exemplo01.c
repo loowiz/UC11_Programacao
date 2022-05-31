@@ -1,8 +1,8 @@
 /* ============================================================
- * CT Eletroeletrônica EaD
+ * CT EletroeletrÃ´nica EaD
  * -----------------------
  * NOME:        01 - Hello World
- * DESCRIÇÃO:   Teste de acionamento de saídas
+ * DESCRIÃ‡ÃƒO:   Teste de acionamento de saÃ­das
  * DATA:        28/11/2019
  * ========================================================== */
 
@@ -15,7 +15,7 @@
 
 
 // ==========================================================
-// CONFIGURAÇÕES DO MICROCONTROLADOR
+// CONFIGURAÃ‡Ã•ES DO MICROCONTROLADOR
 // ==========================================================
 #pragma config  FOSC    = HS
 #pragma config  PLLDIV  = 1
@@ -37,9 +37,9 @@
 // ==========================================================
 void main(void) {
     // ------------------------------------------------------
-    // CONFIGURAÇÕES INICIAIS
+    // CONFIGURAÃ‡Ã•ES INICIAIS
     // ------------------------------------------------------
-    TRISDbits.RD0 = 0;  // Configura pino RD0 como saída
+    TRISDbits.RD0 = 0;  // Configura pino RD0 como saÃ­da
     // ------------------------------------------------------
     
     PORTDbits.RD0 = 1; // Aciona pino RD0
