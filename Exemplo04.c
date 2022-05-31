@@ -1,8 +1,8 @@
 /* ============================================================
- * CT EletroeletrÙnica EaD
+ * CT Eletroeletr√¥nica EaD
  * -----------------------
  * NOME:        04 - Display e IOs
- * DESCRI«√O:   Testes com Display e entradas e saÌdas
+ * DESCRI√á√ÉO:   Testes com Display e entradas e sa√≠das
  * DATA:        05/12/2019
  * ========================================================== */
 
@@ -17,7 +17,7 @@
 
 
 // ==========================================================
-// CONFIGURA«’ES DO MICROCONTROLADOR
+// CONFIGURA√á√ïES DO MICROCONTROLADOR
 // ==========================================================
 #pragma config  FOSC    = HS
 #pragma config  PLLDIV  = 1
@@ -35,7 +35,7 @@
 
 
 // ==========================================================
-// DEFINI«’ES
+// DEFINI√á√ïES
 // ==========================================================
 #define _XTAL_FREQ  4000000
 
@@ -48,7 +48,7 @@
 #define Tris_Botao_02   TRISBbits.TRISB0
 #define Tris_Botao_03   TRISCbits.TRISC2
 
-// --------- SAÕDAS --------- 
+// --------- SA√çDAS --------- 
 #define LED_01      PORTDbits.RD0
 #define LED_02      PORTDbits.RD1
 #define LED_03      PORTDbits.RD2
@@ -73,26 +73,26 @@
 // ==========================================================
 void main(void) {
     // ------------------------------------------------------
-    // CONFIGURA«’ES INICIAIS
+    // CONFIGURA√á√ïES INICIAIS
     // ------------------------------------------------------
-    Tris_Botao_01 = 1;      // Configura pino do bot„o como entrada
-    Tris_Botao_02 = 1;      // Configura pino do bot„o como entrada
-    Tris_Botao_03 = 1;      // Configura pino do bot„o como entrada
-    //TRISCbits.RC4 = 1;    // Apenas para mostrar que o pino RC4 n„o È configurado como entrada desta forma no 18F4550
-                            // RC4 È ativada pelas opÁıes de USB abaixo.
-    UCON = 0x00;            //** PARA O PIC 18F4550: desativa opÁıes de USB para utilizar a porta RC4 como entrada
-    UCFGbits.UTRDIS = 1;    //** PARA O PIC 18F4550: desativa opÁıes de USB para utilizar a porta RC4 como entrada
+    Tris_Botao_01 = 1;      // Configura pino do bot√£o como entrada
+    Tris_Botao_02 = 1;      // Configura pino do bot√£o como entrada
+    Tris_Botao_03 = 1;      // Configura pino do bot√£o como entrada
+    //TRISCbits.RC4 = 1;    // Apenas para mostrar que o pino RC4 n√£o √© configurado como entrada desta forma no 18F4550
+                            // RC4 √© ativada pelas op√ß√µes de USB abaixo.
+    UCON = 0x00;            //** PARA O PIC 18F4550: desativa op√ß√µes de USB para utilizar a porta RC4 como entrada
+    UCFGbits.UTRDIS = 1;    //** PARA O PIC 18F4550: desativa op√ß√µes de USB para utilizar a porta RC4 como entrada
     
-    Tris_LED_01 = 0;        // Configura pino do LED como saÌda
-    Tris_LED_02 = 0;        // Configura pino do LED como saÌda
-    Tris_LED_03 = 0;        // Configura pino do LED como saÌda
-    Tris_LED_04 = 0;        // Configura pino do LED como saÌda
-    Tris_LED_05 = 0;        // Configura pino do LED como saÌda
-    Tris_LED_06 = 0;        // Configura pino do LED como saÌda
-    Tris_LED_07 = 0;        // Configura pino do LED como saÌda
-    Tris_LED_08 = 0;        // Configura pino do LED como saÌda
+    Tris_LED_01 = 0;        // Configura pino do LED como sa√≠da
+    Tris_LED_02 = 0;        // Configura pino do LED como sa√≠da
+    Tris_LED_03 = 0;        // Configura pino do LED como sa√≠da
+    Tris_LED_04 = 0;        // Configura pino do LED como sa√≠da
+    Tris_LED_05 = 0;        // Configura pino do LED como sa√≠da
+    Tris_LED_06 = 0;        // Configura pino do LED como sa√≠da
+    Tris_LED_07 = 0;        // Configura pino do LED como sa√≠da
+    Tris_LED_08 = 0;        // Configura pino do LED como sa√≠da
     
-    IniciaLCD();            // FunÁ„o que configura e inicializa LCD
+    IniciaLCD();            // Fun√ß√£o que configura e inicializa LCD
     // ------------------------------------------------------
     
 	LimpaLCD();                     // Limpa tela do display
