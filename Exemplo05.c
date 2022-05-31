@@ -1,8 +1,8 @@
 /* ============================================================
- * CT EletroeletrÙnica EaD
+ * CT Eletroeletr√¥nica EaD
  * -----------------------
- * NOME:        05 - M·quina de estados
- * DESCRI«√O:   Metodologia para controle de processos
+ * NOME:        05 - M√°quina de estados
+ * DESCRI√á√ÉO:   Metodologia para controle de processos
  * DATA:        05/12/2019
  * ========================================================== */
 
@@ -17,7 +17,7 @@
 
 
 // ==========================================================
-// CONFIGURA«’ES DO MICROCONTROLADOR
+// CONFIGURA√á√ïES DO MICROCONTROLADOR
 // ==========================================================
 #pragma config  FOSC    = HS
 #pragma config  PLLDIV  = 1
@@ -35,7 +35,7 @@
 
 
 // ==========================================================
-// DEFINI«’ES
+// DEFINI√á√ïES
 // ==========================================================
 #define _XTAL_FREQ  4000000
 
@@ -48,7 +48,7 @@
 #define Tris_Botao_02   TRISBbits.TRISB0
 #define Tris_Botao_03   TRISCbits.TRISC2
 
-// --------- SAÕDAS --------- 
+// --------- SA√çDAS --------- 
 #define LED_01      PORTDbits.RD0
 #define LED_02      PORTDbits.RD1
 #define LED_03      PORTDbits.RD2
@@ -73,32 +73,32 @@
 // ==========================================================
 void main(void) {
     // ------------------------------------------------------
-    // VARI¡VEIS E CONSTANTES LOCAIS
+    // VARI√ÅVEIS E CONSTANTES LOCAIS
     // ------------------------------------------------------
     int Estado = 0;
     // ------------------------------------------------------
     
     // ------------------------------------------------------
-    // CONFIGURA«’ES INICIAIS
+    // CONFIGURA√á√ïES INICIAIS
     // ------------------------------------------------------
-    Tris_Botao_01 = 1;      // Configura pino do bot„o como entrada
-    Tris_Botao_02 = 1;      // Configura pino do bot„o como entrada
-    Tris_Botao_03 = 1;      // Configura pino do bot„o como entrada
-    //TRISCbits.RC4 = 1;    // Apenas para mostrar que o pino RC4 n„o È configurado como entrada desta forma no 18F4550
-                            // RC4 È ativada pelas opÁıes de USB abaixo.
-    UCON = 0x00;            //** PARA O PIC 18F4550: desativa opÁıes de USB para utilizar a porta RC4 como entrada
-    UCFGbits.UTRDIS = 1;    //** PARA O PIC 18F4550: desativa opÁıes de USB para utilizar a porta RC4 como entrada
+    Tris_Botao_01 = 1;      // Configura pino do bot√£o como entrada
+    Tris_Botao_02 = 1;      // Configura pino do bot√£o como entrada
+    Tris_Botao_03 = 1;      // Configura pino do bot√£o como entrada
+    //TRISCbits.RC4 = 1;    // Apenas para mostrar que o pino RC4 n√£o √© configurado como entrada desta forma no 18F4550
+                            // RC4 √© ativada pelas op√ß√µes de USB abaixo.
+    UCON = 0x00;            //** PARA O PIC 18F4550: desativa op√ß√µes de USB para utilizar a porta RC4 como entrada
+    UCFGbits.UTRDIS = 1;    //** PARA O PIC 18F4550: desativa op√ß√µes de USB para utilizar a porta RC4 como entrada
     
-    Tris_LED_01 = 0;        // Configura pino do LED como saÌda
-    Tris_LED_02 = 0;        // Configura pino do LED como saÌda
-    Tris_LED_03 = 0;        // Configura pino do LED como saÌda
-    Tris_LED_04 = 0;        // Configura pino do LED como saÌda
-    Tris_LED_05 = 0;        // Configura pino do LED como saÌda
-    Tris_LED_06 = 0;        // Configura pino do LED como saÌda
-    Tris_LED_07 = 0;        // Configura pino do LED como saÌda
-    Tris_LED_08 = 0;        // Configura pino do LED como saÌda
+    Tris_LED_01 = 0;        // Configura pino do LED como sa√≠da
+    Tris_LED_02 = 0;        // Configura pino do LED como sa√≠da
+    Tris_LED_03 = 0;        // Configura pino do LED como sa√≠da
+    Tris_LED_04 = 0;        // Configura pino do LED como sa√≠da
+    Tris_LED_05 = 0;        // Configura pino do LED como sa√≠da
+    Tris_LED_06 = 0;        // Configura pino do LED como sa√≠da
+    Tris_LED_07 = 0;        // Configura pino do LED como sa√≠da
+    Tris_LED_08 = 0;        // Configura pino do LED como sa√≠da
     
-    IniciaLCD();            // FunÁ„o que configura e inicializa LCD
+    IniciaLCD();            // Fun√ß√£o que configura e inicializa LCD
     // ------------------------------------------------------
     
 	LimpaLCD();                     // Limpa tela do display
@@ -107,38 +107,38 @@ void main(void) {
 	PosicionaLCD(2,1);              // Posiciona o cursor na linha 2 e coluna 1
 	StringLCD("Estado:         ");  // Estreve texto
     
-    while(1){               // LaÁo infinito da m·quina de estados
-        // ----- AÁıes que sempre ocorrem ----- 
+    while(1){               // La√ßo infinito da m√°quina de estados
+        // ----- A√ß√µes que sempre ocorrem ----- 
         PosicionaLCD(2,9);              // Posiciona o cursor na linha 2 e coluna 9
-        NumeroLCD(Estado);              // Estreve n˙mero
+        NumeroLCD(Estado);              // Estreve n√∫mero
         
-        // ----- N˙cleo da m·quina de estados ----- 
+        // ----- N√∫cleo da m√°quina de estados ----- 
         switch(Estado){
             case 0:                     // Estado 0
-                LED_01 = 1;             // AÁıes
-                LED_02 = 0;             // AÁıes
-                LED_03 = 0;             // AÁıes
-                if(Botao_01 == 1){      // CondiÁ„o de transiÁ„o
-                    while(Botao_01 == 1); // Trava para o caso do bot„o permanecer acionado
-                    Estado = 1;         // Muda de estado se a condiÁ„o for satisfeita
+                LED_01 = 1;             // A√ß√µes
+                LED_02 = 0;             // A√ß√µes
+                LED_03 = 0;             // A√ß√µes
+                if(Botao_01 == 1){      // Condi√ß√£o de transi√ß√£o
+                    while(Botao_01 == 1); // Trava para o caso do bot√£o permanecer acionado
+                    Estado = 1;         // Muda de estado se a condi√ß√£o for satisfeita
                 }
                 break;
             case 1:                     // Estado 2
-                LED_01 = 0;             // AÁıes
-                LED_02 = 1;             // AÁıes
-                LED_03 = 0;             // AÁıes
-                if(Botao_01 == 1){      // CondiÁ„o de transiÁ„o
-                    while(Botao_01 == 1); // Trava para o caso do bot„o permanecer acionado
-                    Estado = 2;         // Muda de estado se a condiÁ„o for satisfeita
+                LED_01 = 0;             // A√ß√µes
+                LED_02 = 1;             // A√ß√µes
+                LED_03 = 0;             // A√ß√µes
+                if(Botao_01 == 1){      // Condi√ß√£o de transi√ß√£o
+                    while(Botao_01 == 1); // Trava para o caso do bot√£o permanecer acionado
+                    Estado = 2;         // Muda de estado se a condi√ß√£o for satisfeita
                 }
                 break;
             case 2:                     // Estado 2
-                LED_01 = 0;             // AÁıes
-                LED_02 = 0;             // AÁıes
-                LED_03 = 1;             // AÁıes
-                if(Botao_01 == 1){      // CondiÁ„o de transiÁ„o
-                    while(Botao_01 == 1); // Trava para o caso do bot„o permanecer acionado
-                    Estado = 0;         // Muda de estado se a condiÁ„o for satisfeita
+                LED_01 = 0;             // A√ß√µes
+                LED_02 = 0;             // A√ß√µes
+                LED_03 = 1;             // A√ß√µes
+                if(Botao_01 == 1){      // Condi√ß√£o de transi√ß√£o
+                    while(Botao_01 == 1); // Trava para o caso do bot√£o permanecer acionado
+                    Estado = 0;         // Muda de estado se a condi√ß√£o for satisfeita
                 }
                 break;
         }        
