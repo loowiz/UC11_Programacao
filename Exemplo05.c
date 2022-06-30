@@ -97,6 +97,8 @@ void main(void) {
     Tris_LED_06 = 0;        // Configura pino do LED como saída
     Tris_LED_07 = 0;        // Configura pino do LED como saída
     Tris_LED_08 = 0;        // Configura pino do LED como saída
+	
+    TRISB = 0b00000011;
     
     IniciaLCD();            // Função que configura e inicializa LCD
     // ------------------------------------------------------
